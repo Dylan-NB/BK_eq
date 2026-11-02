@@ -8,5 +8,5 @@ Function::Function(){}
 Function::~Function(){}
 
 double Function::evaluate(double x, double y){
-	return x + y;
+	return y * y * std::sin(x);
 }
