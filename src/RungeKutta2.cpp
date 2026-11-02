@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 
-#include "RungeKutta2.h"
-#include "function.h"
+#include "bk/RungeKutta2.h"
+#include "bk/function.h"
 
 RungeKutta2::RungeKutta2(Function &f, double x0, double y0, double x, double h) : func(f)
 {

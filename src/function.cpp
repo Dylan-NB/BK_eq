@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "function.h"
+#include "bk/function.h"
 
 Function::Function(){}
 
