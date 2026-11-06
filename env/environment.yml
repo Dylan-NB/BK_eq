@@ -1,0 +1,9 @@
+name: bk_eq
+channels:
+  - conda-forge
+  - nodefaults  # avoid defaults channel to
+                # prevent backend mismatches
+dependencies:
+  # c++ build
+  - compilers
+  - cmake
