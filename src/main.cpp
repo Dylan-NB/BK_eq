@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include <function.h>
-#include <RungeKutta2.h>
+#include "bk/function.h"
+#include "bk/RungeKutta2.h"
 
 int main(){
   	Function f;                          
