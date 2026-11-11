@@ -8,8 +8,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(rk2 src/RungeKutta2.cpp)
-target_include_directories(rk2 PUBLIC
+add_library(rk4 src/RungeKutta4.cpp)
+target_include_directories(rk4 PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   )
 
@@ -20,5 +20,5 @@ target_include_directories(function PUBLIC
 
 # ejecutable "entry-point"
 add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE rk2 function)
+target_link_libraries(main PRIVATE rk4 function)
 target_compile_options(main PRIVATE -O3 -Wall -Wextra -Wpedantic)

@@ -1,14 +1,14 @@
-#ifndef RUNGEKUTTA2_H
-#define RUNGEKUTTA2_H
+#ifndef RUNGEKUTTA4_H
+#define RUNGEKUTTA4_H
 
 #include <vector>
 #include "function.h"
 
-class RungeKutta2
+class RungeKutta4
 {
 	public:
-		RungeKutta2(Function &f, double x0, double y0, double x, double h);
-		RungeKutta2(const RungeKutta2 &obj);
+		RungeKutta4(Function &f, double x0, double y0, double x, double h);
+		RungeKutta4(const RungeKutta4 &obj);
 		double xin;
 		double yin;
 		double xTarget;
@@ -18,6 +18,6 @@ class RungeKutta2
     		std::vector<double> yValues;
 	private:
 		Function &func;
-		RungeKutta2();
+		RungeKutta4();
 };
 #endif 
