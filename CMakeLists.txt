@@ -18,7 +18,12 @@ target_include_directories(function PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   )
 
+add_library(trapezoid src/trapezoid.cpp)
+target_include_directories(trapezoid PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  )
+
 # ejecutable "entry-point"
 add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE rk4 function)
+target_link_libraries(main PRIVATE rk4 function trapezoid)
 target_compile_options(main PRIVATE -O3 -Wall -Wextra -Wpedantic)
