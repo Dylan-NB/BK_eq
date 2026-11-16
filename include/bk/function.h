@@ -8,7 +8,8 @@ class Function
 		double evaluate(double rp);           //to test trapezoid
 		double N0(double r);
 		double r = 1.0;
-		double Qs0 = 0.24; // (GeV)^2		   				
+		double Qs0 = 0.24; // (GeV)^2
+		bool useLog = false;		   				
 		Function();
 		~Function();
 };

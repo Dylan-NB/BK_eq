@@ -32,3 +32,7 @@ target_compile_options(main PRIVATE -O3 -Wall -Wextra -Wpedantic)
 add_executable(main2 src/main2.cpp)
 target_link_libraries(main2 PRIVATE function trapezoid)
 target_compile_options(main2 PRIVATE -O3 -Wall -Wextra -Wpedantic)
+
+add_executable(main3 src/main3.cpp)
+target_link_libraries(main3 PRIVATE function trapezoid)
+target_compile_options(main3 PRIVATE -O3 -Wall -Wextra -Wpedantic)
