@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 #include "bk/function.h"
 #include "bk/RungeKutta4.h"

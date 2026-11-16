@@ -27,3 +27,8 @@ target_include_directories(trapezoid PUBLIC
 add_executable(main src/main.cpp)
 target_link_libraries(main PRIVATE rk4 function trapezoid)
 target_compile_options(main PRIVATE -O3 -Wall -Wextra -Wpedantic)
+
+# segundo ejecutable: prueba de la integral 1D de BK
+add_executable(main2 src/main2.cpp)
+target_link_libraries(main2 PRIVATE function trapezoid)
+target_compile_options(main2 PRIVATE -O3 -Wall -Wextra -Wpedantic)
