@@ -16,8 +16,8 @@ class RungeKutta4
 		double method();
 		std::vector<double> xValues;
     		std::vector<double> yValues;
+		static void stepDipole(Dipole &dip, double dy, double abar);
 	private:
 		Function &func;
-		RungeKutta4();
 };
 #endif 
