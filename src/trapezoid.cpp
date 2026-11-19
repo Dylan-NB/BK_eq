@@ -27,3 +27,12 @@ double trapezoid::integrate(){
 		s += func.evaluate(Iin + k * h);
         return h * (0.5 * func.evaluate(Iin) + 0.5 * func.evaluate(Ifin) + s);
 }
+
+double trapezoid::integrate(const std::vector<double> &f, double h){
+        int n = f.size();
+
+        double s = 0.0;
+        for (int k = 1; k < n - 1; ++k)
+                s += f[k];
+        return h * (0.5 * f[0] + 0.5 * f[n - 1] + s);
+}

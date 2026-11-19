@@ -12,8 +12,8 @@ class trapezoid
                 double Ifin;
                 int divisions;
                 double integrate();
+		static double integrate(const std::vector<double> &f, double h);
         private:
                 Function &func;
-                trapezoid();
 };
 #endif

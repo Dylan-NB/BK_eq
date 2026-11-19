@@ -9,14 +9,14 @@ class Dipole
         public:
                 Dipole(double rmin, double rmax, int n);     // grilla uniforme en z = ln r
 
-                void setGBW(double Qs0);                     // condición inicial (ec. 4.53), Qs0 = Q_s0^2
-                double interpolate(double r) const;          // N(r) en cualquier r: interpola entre N_i y N_i+1
-                void output(std::ostream &out) const;        // imprime y, r_j, N_j
+                void setGBW(double Qs0);                     // condición inicial (ec. 4.53)
+                double interpolate(double r) const;          
+                void output(std::ostream &out) const;        
 
-                std::vector<double> r;                       // r_j
-                std::vector<double> N;                       // N_j = N(y, r_j)
-                double y = 0.0;                              // rapidez actual
-                double zmin;                                 // ln(rmin)
-                double dz;                                   // paso en ln r
+                std::vector<double> r;                       
+                std::vector<double> N;                       
+                double y = 0.0;                              
+                double zmin;                                 
+                double dz;                                   
 };
 #endif

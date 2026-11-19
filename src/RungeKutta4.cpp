@@ -49,3 +49,23 @@ double RungeKutta4::method(){
 		}
 	return y;
 }
+
+void RungeKutta4::stepDipole(Dipole &dip, double dy, double abar){
+        int n = dip.N.size();
+        Dipole tmp = dip;                                // copia para los estados intermedios
+
+        std::vector<double> k1 = rhs(dip, abar);
+
+        for (int j = 0; j < n; ++j) tmp.N[j] = dip.N[j] + 0.5 * dy * k1[j];
+        std::vector<double> k2 = rhs(tmp, abar);
+
+        for (int j = 0; j < n; ++j) tmp.N[j] = dip.N[j] + 0.5 * dy * k2[j];
+        std::vector<double> k3 = rhs(tmp, abar);
+
+        for (int j = 0; j < n; ++j) tmp.N[j] = dip.N[j] + dy * k3[j];
+        std::vector<double> k4 = rhs(tmp, abar);
+
+        for (int j = 0; j < n; ++j)
+                dip.N[j] += dy * (k1[j] + 2 * k2[j] + 2 * k3[j] + k4[j]) / 6.0;
+        dip.y += dy;
+}

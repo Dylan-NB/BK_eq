@@ -24,7 +24,7 @@ void Dipole::setGBW(double Qs0)
 double Dipole::interpolate(double rr) const
 {
         int n = N.size();
-        if (rr <= r[0])     return N[0] * (rr * rr) / (r[0] * r[0]);   // debajo de la grilla: N ~ r^2
+        if (rr <= r[0])     return N[0] * (rr * rr) / (r[0] * r[0]);   // debajo de la grilla: N ~ r^2 (sale expandiendo en Taylor la ec 4.53)
         if (rr >= r[n - 1]) return N[n - 1];                             // arriba de la grilla: saturado
 
         double t = (std::log(rr) - zmin) / dz;   // posición en la grilla 
