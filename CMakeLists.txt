@@ -12,6 +12,7 @@ add_library(rk4 src/RungeKutta4.cpp)
 target_include_directories(rk4 PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   )
+target_link_libraries(rk4 PUBLIC function bk)
 
 add_library(function src/function.cpp)
 target_include_directories(function PUBLIC
@@ -22,6 +23,18 @@ add_library(trapezoid src/trapezoid.cpp)
 target_include_directories(trapezoid PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   )
+target_link_libraries(trapezoid PUBLIC function)
+
+add_library(dipole src/dipole.cpp)
+target_include_directories(dipole PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  )
+
+add_library(bk src/BKec.cpp)
+target_include_directories(bk PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  )
+target_link_libraries(bk PUBLIC dipole trapezoid)
 
 # ejecutable "entry-point"
 add_executable(main src/main.cpp)
@@ -36,3 +49,8 @@ target_compile_options(main2 PRIVATE -O3 -Wall -Wextra -Wpedantic)
 add_executable(main3 src/main3.cpp)
 target_link_libraries(main3 PRIVATE function trapezoid)
 target_compile_options(main3 PRIVATE -O3 -Wall -Wextra -Wpedantic)
+
+# cuarto ejecutable: evolución en y con Dipole y RK4
+add_executable(main4 src/main4.cpp)
+target_link_libraries(main4 PRIVATE rk4 dipole)
+target_compile_options(main4 PRIVATE -O3 -Wall -Wextra -Wpedantic)

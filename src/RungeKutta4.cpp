@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 #include "bk/RungeKutta4.h"
 #include "bk/function.h"
+#include "bk/BKec.h"     
 
 RungeKutta4::RungeKutta4(Function &f, double x0, double y0, double x, double h) : func(f)
 {

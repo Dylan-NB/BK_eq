@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "function.h"
-
+#include "dipole.h"
 class RungeKutta4
 {
 	public:
